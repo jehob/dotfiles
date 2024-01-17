@@ -257,6 +257,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+vim.keymap.set('n', '<leader>f', ':Ex<Cr>', {desc = 'Open files'})
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
@@ -607,6 +609,8 @@ harpoon:setup({})
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
 vim.keymap.set("n", "<leader>r", function() harpoon:list():remove() end)
+vim.keymap.set("n", "<leader>y", function() harpoon:list():clear() end)
+
 
 vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
