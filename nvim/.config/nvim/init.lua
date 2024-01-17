@@ -150,12 +150,9 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
   },
 
   {
@@ -257,13 +254,19 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-vim.keymap.set('n', '<leader>f', ':Ex<Cr>', {desc = 'Open files'})
+vim.keymap.set('n', '<leader>f', ':Ex<Cr>', { desc = 'Open files' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- setup catpuccin
+require("catppuccin").setup({
+  flavour = "mocha",
+})
+vim.cmd.colorscheme "catppuccin"
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
