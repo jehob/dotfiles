@@ -189,6 +189,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec "setxkbmap -layout us,us"
 
 # window separation
-gaps inner 5
+gaps inner 0
 gaps outer 0
-for_window [class="^.*"] border pixel 2
+# color the active border (last value)
+client.focused #ffffff #ffffff #ffffff #ffffff #d15660
+# hide title bars
+for_window [class="^.*"] border pixel 4
