@@ -126,7 +126,6 @@ require('lazy').setup({
       },
     },
   },
-
   {
     "Saecki/crates.nvim",
     event = { "BufRead Cargo.toml" },
@@ -146,7 +145,7 @@ require('lazy').setup({
   },
   {
     'mrcjkb/rustaceanvim',
-    version = '^3', -- Recommended
+    version = '^4', -- Recommended
     ft = { 'rust' },
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -429,6 +428,24 @@ cmp.setup {
     { name = 'path' },
   },
 }
+
+-- local dap = require("dap")
+-- dap.adapters.gdb = {
+--   type = "executable",
+--   command = "gdb",
+--   args = { "-i", "dap" }
+-- }
+-- dap.configurations.rust = {
+--   {
+--     name = "Launch",
+--     type = "gdb",
+--     request = "launch",
+--     program = function()
+--       return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+--     end,
+--     cwd = "${workspaceFolder}",
+--   },
+-- }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
